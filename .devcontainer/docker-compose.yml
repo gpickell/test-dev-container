@@ -1,6 +1,8 @@
 services:
   code:
     image: node:alpine
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["exec sleep infinity"]
     volumes:
       - scratch:/scratch
   alpine:
