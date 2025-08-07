@@ -1,6 +1,5 @@
 {
     "dockerComposeFile": "docker-compose.yml",
     "service": "code",
-    "workspaceFolder": "/workspaces/code",
-    "overrideCommand": false
+    "workspaceFolder": "/workspaces/code"
 }

@@ -1,7 +1,6 @@
 services:
   code:
     build: .
-    command: bash /setup.sh
     volumes:
       - home:/home/codespace
       - workspaces:/workspaces
