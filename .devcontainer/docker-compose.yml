@@ -1,6 +1,6 @@
 services:
   code:
-    image: mcr.microsoft.com/devcontainers/universal:2
+    image: node:alpine
     volumes:
       - scratch:/scratch
   alpine:
