@@ -2,9 +2,17 @@
     "name": "VertiGIS Studio for Codespaces",    
     "dockerComposeFile": "docker-compose.yml",
     "service": "code",
+    "onCreateCommand": "sh .devcontainer/create.sh",
     "customizations": {
         "codespaces": {
-            "openFiles": ["README.md"]
+            "openFiles": ["/home/vs-coder/.INFO.md"]            
+        },
+        "vscode": {
+            "settings": {
+                "workbench.editorAssociations": {
+                    ".INFO.md": "vscode.markdown.preview.editor"
+                }
+            }
         }
     },
     "hostRequirements": {
