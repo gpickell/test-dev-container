@@ -1,6 +1,13 @@
 services:
   code:
-    image: mcr.microsoft.com/devcontainers/universal:2
+    build: .
+    command: bash /setup.sh
+    volumes:
+      - home:/home/codespace
+      - workspaces:/workspaces
+    configs:
+      - source: setup_sh
+        target: /setup.sh
   studio:
     image: ghcr.io/vertigis/studio/base:v1.1.714.249788-r16430100340
     environment:
@@ -20,6 +27,10 @@ services:
       - source: enterprise_ca_crt
         target: /usr/local/share/ca-certificates/enterprise_ca.crt
 configs:
+  setup_sh:
+    content: |
+      env > /tmp/env
+      exec sleep infinity
   enterprise_ca_crt:
     content: |
       -----BEGIN CERTIFICATE-----
@@ -56,4 +67,5 @@ volumes:
   data: {}
   logs: {}
   stmp: {}
-  
+  home: {}
+  workspaces: {}
