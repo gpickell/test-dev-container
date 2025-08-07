@@ -3,6 +3,8 @@ services:
     image: mcr.microsoft.com/devcontainers/universal:2
   studio:
     image: ghcr.io/vertigis/studio/base:v1.1.714.249788-r16430100340
+    ports:
+      - 80:8080
     environment:
       ARCGIS_APP_ID: AEaTlk9QLQS7YIZt
       VERTIGIS_ACCOUNT_ID: 88cb61d6-af47-9b3e-5181-ed674c4c0815
@@ -20,10 +22,6 @@ services:
       - source: enterprise_ca_crt
         target: /usr/local/share/ca-certificates/enterprise_ca.crt
 configs:
-  setup_sh:
-    content: |
-      env > /tmp/env
-      exec sleep infinity
   enterprise_ca_crt:
     content: |
       -----BEGIN CERTIFICATE-----
@@ -60,5 +58,4 @@ volumes:
   data: {}
   logs: {}
   stmp: {}
-  home: {}
-  workspaces: {}
+
