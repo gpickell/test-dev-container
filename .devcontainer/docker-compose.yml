@@ -1,0 +1,59 @@
+services:
+  code:
+    image: mcr.microsoft.com/devcontainers/universal:2
+  studio:
+    image: ghcr.io/vertigis/studio/base:v1.1.714.249788-r16430100340
+    environment:
+      ARCGIS_APP_ID: AEaTlk9QLQS7YIZt
+      VERTIGIS_ACCOUNT_ID: 88cb61d6-af47-9b3e-5181-ed674c4c0815
+      ARCGIS_PORTAL_URL: https://latitudegeo.maps.arcgis.com
+      FRONTEND_URL: https://localhost:7443
+      TZ: America/Los_Angeles
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - "data:/data"
+      - "logs:/var/log"
+      - "stmp:/stmp"
+    configs:
+      - source: enterprise_ca_crt
+        target: /usr/local/share/ca-certificates/enterprise_ca.crt
+configs:
+  enterprise_ca_crt:
+    content: |
+      -----BEGIN CERTIFICATE-----
+      MIIFETCCAvmgAwIBAgIQZaUwptsxpIRMj9FNA+ezhTANBgkqhkiG9w0BAQ0FADAb
+      MRkwFwYDVQQDExBMRy1DQS1ST09UMS1DQS0xMB4XDTE3MDEyNjE4NTkzM1oXDTI3
+      MDEyNjE5MDkzMFowGzEZMBcGA1UEAxMQTEctQ0EtUk9PVDEtQ0EtMTCCAiIwDQYJ
+      KoZIhvcNAQEBBQADggIPADCCAgoCggIBAKH+0b1O5XUejNMnR1LBefa8mEn24y3h
+      PI+kqvCoOcXpdy4BwD9XmCYER2vfQ6p1KjvEA7DH82Y/On4mia9XTiqKGDN6bb8I
+      xNVWR+ul4HfC5DUEUBEJ6Z/ETWS5ETRgqkbslWdlvteclv1tB18YGEtcIVzZoTNd
+      MleUhKWaJGP3PIM59rVy0Dgg3YoIxqE+sYC4Wfx8smToW/ITEnHYDqxvJrcfUPmq
+      aRIoh5dcOjL0ouavYMwl6CenJCrcWa7GdI1kW9208tWVAEX57DPtzzni994rsYqK
+      2jRHBI3MDlHIiPrOUoPpsdsvxsZFMSGh5bigludwb012AvQVw/0pXIOIbgJk4tG7
+      cKWRBmqJ/oK/BslcxEzZueVw15cJXtpYic99mLLm21wuMvNmvR6oG1rmsI4VwXB0
+      yWCX7mOC9Gwksr+nrTN8gfCc7KUtq6/NvcwT+hk9RrNKsLG1D8WlcydpKnlnngbb
+      WEEQN+QjtEgEFGwu5JeKtioIuuE1Zlu9DcgSUqqAjUMCAJeBT7GjfSOhZaaE1cD+
+      rEaOyaLp8yCBZjwsZlfL2SJZu4/YvEWsiVtRbCn81rnQ/YdTNmGZIN1cRJeAYDyy
+      WfbpyeUBD+/BJuzHG+iPLcv+DSaeBbOZgDSVzqtVBvtezWi5kEaLVYp/iWkoXcXR
+      SaHE0qOgB9W3AgMBAAGjUTBPMAsGA1UdDwQEAwIBhjAPBgNVHRMBAf8EBTADAQH/
+      MB0GA1UdDgQWBBQu5r7qcUULt+EQPVIxhePJsSrXfjAQBgkrBgEEAYI3FQEEAwIB
+      ADANBgkqhkiG9w0BAQ0FAAOCAgEAnDIMrUSt+xpYKx9gwDUuI/YFzLUPyebEQtuR
+      +hzp0Gfo6C5UG6hujp6JwRZiu1eZ2SQ8v6pcC0vLK19nzAJkGPmIpi9CM9ilfEqf
+      OQlHf+Q+V/Sdq/SStFRKARTUS+aVPnxHjVZvQM10I1iKD7U59a6IFMHUEBGW2wjk
+      XxX6HQr/DqtcZyIv8rXRoBVQtwimDPfX/i4G7Pjxy94ul5d/Guaqr+G1It93hB6o
+      F7mD3gxR/0NShoOiY22VyLAsO6+nRHP/KNE1FzP9RQIMnvZ9gNbmbz2vobGeA/87
+      SxUHS/XAKNDqM/gIm1dLxitReRdgd+x56fAiPZO6erJKoVnaKLxb1evb0BClCnOL
+      3d1ffKVMZF0PC+rirXCaCMZkrf5p7MGOiHyFrNxaum1JM9rc+kZoAOrretDhclxL
+      fMzvBHR4nEQ6yt7j/k265K5bqP5WSSi1ZSE1OobNwOVCbycetfA3oTr/pl87G+TH
+      KviA5x54g8at+Lmd5NW30pq1XpghEcbhzXcEoeA4/napbU9A3SW6+oIu8V2EPeUd
+      b+in9NqY2ABkcSw9otQZBMTc4InHbEO8o1uQJabh9SPFGEUjlCHtlFPzrjYkjlYb
+      JHSnB3Ut0l/LlawRImgcfTCY5tcPFtuCn2JNJQOJEp78VDxPuBo/P+QDUiViGi2W
+      3xFRxh0=
+      -----END CERTIFICATE-----
+volumes:
+  data: {}
+  logs: {}
+  stmp: {}
+  
