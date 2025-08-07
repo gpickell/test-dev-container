@@ -1,4 +1,17 @@
 {
+    "name": "VertiGIS Studio for Codespaces",    
     "dockerComposeFile": "docker-compose.yml",
-    "service": "code"
+    "service": "code",
+    "customizations": {
+        "codespaces": {
+            "openFiles": ["README.md"]
+        }
+    },
+    "forwardPorts": [8080],
+    "portsAttributes": {
+        "3000": {
+            "label": "Studio",
+            "onAutoForward": "openBrowser"                        
+        }
+    }
 }
