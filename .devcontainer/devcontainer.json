@@ -21,7 +21,7 @@
     },
     "forwardPorts": [8080],
     "portsAttributes": {
-        "3000": {
+        "8080": {
             "label": "Studio",
             "onAutoForward": "openBrowser"                        
         }
