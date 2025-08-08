@@ -3,10 +3,8 @@
     "dockerComposeFile": "docker-compose.yml",
     "service": "code",
     "onCreateCommand": "sh .devcontainer/create.sh",
+    "postAttachCommand": "code ~/.INFO.md",
     "customizations": {
-        "codespaces": {
-            "openFiles": ["/home/vs-coder/.INFO.md"]            
-        },
         "vscode": {
             "settings": {
                 "workbench.editorAssociations": {
