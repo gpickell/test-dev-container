@@ -7,4 +7,5 @@ settings="${!hint}"
 cat > .env <<EOF
 $settings
 FRONTEND_URL=https://$CODESPACE_NAME-8080.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN
+SOME_EXTRA=33
 EOF
