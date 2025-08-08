@@ -2,6 +2,7 @@
     "name": "VertiGIS Studio for Codespaces",    
     "dockerComposeFile": "docker-compose.yml",
     "service": "code",
+    "initializeCommand": "bash .devcontainer/init.sh",
     "onCreateCommand": "sh .devcontainer/create.sh",
     "postAttachCommand": "code ~/.INFO.md",
     "customizations": {
