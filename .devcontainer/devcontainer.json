@@ -5,6 +5,9 @@
     "onCreateCommand": "sh .devcontainer/create.sh",
     "postAttachCommand": "code ~/.INFO.md",
     "customizations": {
+        "codespaces": {
+            "openFiles": ["/.none"]
+        },
         "vscode": {
             "settings": {
                 "workbench.editorAssociations": {
